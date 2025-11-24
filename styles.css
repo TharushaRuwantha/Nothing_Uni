@@ -1,0 +1,477 @@
+/* Harvard-Inspired Color Scheme */
+:root {
+    --maroon: #A51C30;
+    --dark-maroon: #8B1623;
+    --light-maroon: #C5384A;
+    --white: #FFFFFF;
+    --off-white: #F8F8F8;
+    --cream: #F5F5DC;
+    --gold: #C4A04A;
+    --dark-gray: #333333;
+    --medium-gray: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: var(--white);
+    color: var(--dark-gray);
+    overflow-x: hidden;
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-maroon) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.shield {
+    width: 120px;
+    height: 140px;
+    background: var(--white);
+    margin: 0 auto 30px;
+    clip-path: polygon(50% 0%, 100% 15%, 100% 75%, 50% 100%, 0% 75%, 0% 15%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.shield-top,
+.shield-middle,
+.shield-bottom {
+    color: var(--maroon);
+    font-weight: bold;
+    text-align: center;
+}
+
+.shield-top {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.shield-middle {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 5px 0;
+    font-family: 'Georgia', serif;
+}
+
+.shield-bottom {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid var(--white);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: var(--white);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+/* Main Content */
+#main-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-content.visible {
+    opacity: 1;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-maroon) 100%);
+    color: var(--white);
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-bottom: 5px solid var(--gold);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.university-seal {
+    margin-bottom: 30px;
+}
+
+.seal-shield {
+    width: 100px;
+    height: 120px;
+    background: var(--white);
+    margin: 0 auto;
+    clip-path: polygon(50% 0%, 100% 15%, 100% 75%, 50% 100%, 0% 75%, 0% 15%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.seal-top,
+.seal-middle,
+.seal-bottom {
+    color: var(--maroon);
+    font-weight: bold;
+}
+
+.seal-top {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.seal-middle {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.seal-bottom {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.university-name {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.university-motto {
+    font-size: 18px;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+/* Main Section */
+main {
+    flex: 1;
+    background: var(--off-white);
+    padding: 80px 20px;
+}
+
+.announcement-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 60px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 50px rgba(165, 28, 48, 0.15);
+    border: 3px solid var(--maroon);
+}
+
+.announcement-title {
+    font-size: 28px;
+    color: var(--medium-gray);
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.program-title {
+    font-size: 36px;
+    color: var(--maroon);
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.program-name {
+    font-size: 48px;
+    color: var(--maroon);
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 40px auto;
+}
+
+.launch-text {
+    font-size: 22px;
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.launch-date {
+    font-size: 32px;
+    text-align: center;
+    color: var(--maroon);
+    font-weight: 600;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+/* Countdown Timer */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-maroon) 100%);
+    padding: 30px 25px;
+    border-radius: 15px;
+    min-width: 140px;
+    box-shadow: 0 8px 25px rgba(165, 28, 48, 0.3);
+    border: 2px solid var(--gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(165, 28, 48, 0.4);
+}
+
+.countdown-number {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-label {
+    font-size: 14px;
+    color: var(--cream);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.countdown-separator {
+    font-size: 48px;
+    color: var(--maroon);
+    font-weight: 700;
+    margin: 0 10px;
+}
+
+/* Program Description */
+.program-description {
+    margin: 60px 0 50px;
+    padding: 40px;
+    background: var(--cream);
+    border-left: 5px solid var(--maroon);
+    border-radius: 5px;
+}
+
+.description-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--dark-gray);
+    text-align: justify;
+    font-weight: 400;
+}
+
+/* Call to Action */
+.call-to-action {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 18px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Georgia', serif;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:not(.secondary) {
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-maroon) 100%);
+    color: var(--white);
+    border: 2px solid var(--maroon);
+}
+
+.cta-button:not(.secondary):hover {
+    background: linear-gradient(135deg, var(--dark-maroon) 0%, var(--maroon) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(165, 28, 48, 0.4);
+}
+
+.cta-button.secondary {
+    background: var(--white);
+    color: var(--maroon);
+    border: 2px solid var(--maroon);
+}
+
+.cta-button.secondary:hover {
+    background: var(--maroon);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(165, 28, 48, 0.4);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--dark-maroon) 0%, var(--maroon) 100%);
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-tagline {
+    font-style: italic;
+    opacity: 0.9;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .university-name {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .university-motto {
+        font-size: 14px;
+    }
+
+    .announcement-container {
+        padding: 40px 25px;
+    }
+
+    .program-title {
+        font-size: 28px;
+    }
+
+    .program-name {
+        font-size: 36px;
+    }
+
+    .countdown {
+        gap: 15px;
+    }
+
+    .countdown-item {
+        min-width: 100px;
+        padding: 20px 15px;
+    }
+
+    .countdown-number {
+        font-size: 42px;
+    }
+
+    .countdown-separator {
+        font-size: 36px;
+        margin: 0 5px;
+    }
+
+    .program-description {
+        padding: 25px;
+    }
+
+    .description-text {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-separator {
+        display: none;
+    }
+
+    .countdown-item {
+        min-width: 80px;
+        padding: 15px 10px;
+    }
+
+    .countdown-number {
+        font-size: 36px;
+    }
+
+    .countdown-label {
+        font-size: 11px;
+    }
+}
