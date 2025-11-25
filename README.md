@@ -36,8 +36,19 @@ Nothing_Uni/
 ├── index.html          # Main HTML structure
 ├── styles.css          # Harvard-inspired styling
 ├── script.js           # Countdown logic and animations
+├── Logo1.png           # University logo (transparent PNG)
 └── README.md           # This file
 ```
+
+## Setup Instructions
+
+1. **Logo Already Included**: The `Logo1.png` file is included in the repository
+   - The logo should be a PNG file with a transparent background
+   - Recommended size: 300x300px or larger (maintains quality)
+   - The logo will be displayed in two places:
+     - Loading screen (180px width on desktop)
+     - Header (150px width on desktop)
+   - Smaller sizes on mobile devices for optimal responsiveness
 
 ## Technologies Used
 
@@ -47,10 +58,10 @@ Nothing_Uni/
 
 ## How to Use
 
-1. Simply open `index.html` in any modern web browser
-2. The loading screen will appear for 2.5 seconds
-3. The countdown timer will automatically start
-4. Interact with the "Notify Me" and "Learn More" buttons
+1. **Open the page**: Simply open `index.html` in any modern web browser (logo is already included)
+2. **Experience**: The loading screen will appear for 2.5 seconds with your logo
+3. **Countdown**: The timer will automatically start counting down to Feb 1st, 2026
+4. **Interact**: Try the "Notify Me" and "Learn More" buttons
 
 ## Customization
 
@@ -78,6 +89,18 @@ setTimeout(() => {
     loadingScreen.classList.add('hidden');
     mainContent.classList.add('visible');
 }, 2500); // Change this value (in milliseconds)
+```
+
+### Change Logo Size
+Adjust logo dimensions in `styles.css`:
+```css
+.loading-logo {
+    width: 180px; /* Change loading screen logo size */
+}
+
+.header-logo {
+    width: 150px; /* Change header logo size */
+}
 ```
 
 ## Browser Compatibility
