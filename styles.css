@@ -48,45 +48,22 @@ body {
     text-align: center;
 }
 
-.shield {
-    width: 120px;
-    height: 140px;
-    background: var(--white);
+.loading-logo {
+    width: 180px;
+    height: auto;
     margin: 0 auto 30px;
-    clip-path: polygon(50% 0%, 100% 15%, 100% 75%, 50% 100%, 0% 75%, 0% 15%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    display: block;
+    filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.3));
+    animation: logoFloat 3s ease-in-out infinite;
 }
 
-.shield-top,
-.shield-middle,
-.shield-bottom {
-    color: var(--maroon);
-    font-weight: bold;
-    text-align: center;
-}
-
-.shield-top {
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-}
-
-.shield-middle {
-    font-size: 48px;
-    font-weight: bold;
-    margin: 5px 0;
-    font-family: 'Georgia', serif;
-}
-
-.shield-bottom {
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-top: 8px;
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .loader-spinner {
@@ -138,43 +115,17 @@ header {
     margin-bottom: 30px;
 }
 
-.seal-shield {
-    width: 100px;
-    height: 120px;
-    background: var(--white);
+.header-logo {
+    width: 150px;
+    height: auto;
     margin: 0 auto;
-    clip-path: polygon(50% 0%, 100% 15%, 100% 75%, 50% 100%, 0% 75%, 0% 15%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    display: block;
+    filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
 }
 
-.seal-top,
-.seal-middle,
-.seal-bottom {
-    color: var(--maroon);
-    font-weight: bold;
-}
-
-.seal-top {
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-}
-
-.seal-middle {
-    font-size: 42px;
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-.seal-bottom {
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-top: 5px;
+.header-logo:hover {
+    transform: scale(1.05);
 }
 
 .university-name {
@@ -403,6 +354,14 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .loading-logo {
+        width: 140px;
+    }
+
+    .header-logo {
+        width: 120px;
+    }
+
     .university-name {
         font-size: 32px;
         letter-spacing: 2px;
@@ -458,6 +417,14 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    .loading-logo {
+        width: 100px;
+    }
+
+    .header-logo {
+        width: 90px;
+    }
+
     .countdown-separator {
         display: none;
     }
