@@ -36,13 +36,13 @@ Nothing_Uni/
 ├── index.html          # Main HTML structure
 ├── styles.css          # Harvard-inspired styling
 ├── script.js           # Countdown logic and animations
-├── logo1.png           # University logo (transparent PNG) - REQUIRED
+├── Logo1.png           # University logo (transparent PNG)
 └── README.md           # This file
 ```
 
 ## Setup Instructions
 
-1. **Add Your Logo**: Place your `logo1.png` file in the root directory
+1. **Logo Already Included**: The `Logo1.png` file is included in the repository
    - The logo should be a PNG file with a transparent background
    - Recommended size: 300x300px or larger (maintains quality)
    - The logo will be displayed in two places:
@@ -58,11 +58,10 @@ Nothing_Uni/
 
 ## How to Use
 
-1. **Add your logo**: Place `logo1.png` (transparent PNG) in the root directory
-2. **Open the page**: Simply open `index.html` in any modern web browser
-3. **Experience**: The loading screen will appear for 2.5 seconds with your logo
-4. **Countdown**: The timer will automatically start counting down to Feb 1st, 2026
-5. **Interact**: Try the "Notify Me" and "Learn More" buttons
+1. **Open the page**: Simply open `index.html` in any modern web browser (logo is already included)
+2. **Experience**: The loading screen will appear for 2.5 seconds with your logo
+3. **Countdown**: The timer will automatically start counting down to Feb 1st, 2026
+4. **Interact**: Try the "Notify Me" and "Learn More" buttons
 
 ## Customization
 
