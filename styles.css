@@ -48,12 +48,17 @@ body {
     text-align: center;
 }
 
-.loading-logo {
-    width: 180px;
-    height: auto;
+.shield-container {
+    width: 140px;
+    height: 160px;
+    background: var(--white);
     margin: 0 auto 30px;
-    display: block;
-    filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.3));
+    clip-path: polygon(50% 0%, 100% 15%, 100% 75%, 50% 100%, 0% 75%, 0% 15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     animation: logoFloat 3s ease-in-out infinite;
 }
 
@@ -64,6 +69,14 @@ body {
     50% {
         transform: translateY(-10px);
     }
+}
+
+.loading-logo {
+    width: 80px;
+    height: auto;
+    display: block;
+    max-height: 120px;
+    object-fit: contain;
 }
 
 .loader-spinner {
@@ -115,17 +128,31 @@ header {
     margin-bottom: 30px;
 }
 
-.header-logo {
-    width: 150px;
-    height: auto;
+.university-seal .shield-container {
+    width: 120px;
+    height: 140px;
+    background: var(--white);
     margin: 0 auto;
-    display: block;
-    filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
+    clip-path: polygon(50% 0%, 100% 15%, 100% 75%, 50% 100%, 0% 75%, 0% 15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    animation: none;
 }
 
-.header-logo:hover {
+.university-seal .shield-container:hover {
     transform: scale(1.05);
+}
+
+.header-logo {
+    width: 70px;
+    height: auto;
+    display: block;
+    max-height: 100px;
+    object-fit: contain;
 }
 
 .university-name {
@@ -354,12 +381,26 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .shield-container {
+        width: 110px;
+        height: 130px;
+        padding: 15px;
+    }
+
     .loading-logo {
-        width: 140px;
+        width: 60px;
+        max-height: 90px;
+    }
+
+    .university-seal .shield-container {
+        width: 100px;
+        height: 120px;
+        padding: 12px;
     }
 
     .header-logo {
-        width: 120px;
+        width: 55px;
+        max-height: 80px;
     }
 
     .university-name {
@@ -417,12 +458,26 @@ footer p {
 }
 
 @media (max-width: 480px) {
+    .shield-container {
+        width: 90px;
+        height: 110px;
+        padding: 12px;
+    }
+
     .loading-logo {
-        width: 100px;
+        width: 45px;
+        max-height: 70px;
+    }
+
+    .university-seal .shield-container {
+        width: 80px;
+        height: 100px;
+        padding: 10px;
     }
 
     .header-logo {
-        width: 90px;
+        width: 40px;
+        max-height: 65px;
     }
 
     .countdown-separator {
